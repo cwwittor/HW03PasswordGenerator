@@ -18,12 +18,14 @@ function generatePassword() {
   var special = false;
   var selectedType = false; //The user has selected a password character type if false
 
+  //strings that will be used for iterating later for password generation
   var lowercaseString = "abcdefghijlmnopqrstuvwxyz";
   var uppercaseString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var numericString = "1234567890";
   var specialString = " !" + '"' + "#" + "$" + "%" + "&" + "'" + "(" + ")" + "*" + "+" + "," + "-" + "." + "/" + ":" + ";" + "<" + "=" + ">" + "?" + "@" + "[" + "\\" + "]" + "^" + "_`{|}~";
   var totalString = "";
 
+  //while loop that will ask the user for the length of the password they would want
   while (lengthOfPassword == null)  {
     var attemptedLengthOfPassword = prompt("What length of password would you like?(8 Character minimum, 128 character maximum");
 
@@ -36,6 +38,7 @@ function generatePassword() {
     }
   }
 
+  //while loop used for making sure the user picks one of the types of characters in their password
   while (selectedType == false)  {
     lowercase = confirm("You want lowercase characters in your password? (select OK if yes, and cancel if no)");
     uppercase = confirm("You want uppercase characters in your password? (select OK if yes, and cancel if no)");
@@ -48,6 +51,7 @@ function generatePassword() {
     }
   }
 
+  //checks the user password if it will include any of the following characters
   if (lowercase == true)  {
     totalString += lowercaseString;
   }
